@@ -11,6 +11,15 @@ $postForm = Form::createPostForm("globals.php");
 $getForm = Form::createGetForm("globals.php");
 $lateForm = Form::createForm("globals.php", "POST");
 
+/**
+var_dump($postForm);
+echo "<br>";
+var_dump($getForm);
+echo "<br>";
+var_dump($lateForm);
+echo "<br>";
+ * */
+
 function itCreateForm(Form $form): Form {
     $form->addField("Name", "name");
     $form->addField("Surname", "surname");
@@ -23,6 +32,8 @@ $getForm = itCreateForm($getForm);
 $lateForm = itCreateForm($lateForm);
 
 $lateForm->setMethod("GET");
+
+
 
 $postForm->render();
 echo "<hr>" . PHP_EOL;
